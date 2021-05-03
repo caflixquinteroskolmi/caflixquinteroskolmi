@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caflix</title>
+    <link rel="shortcut icon" href="png/caflixlogo.png.png" type="image/x-icon">
+    <link rel="stylesheet" href="estilos.css"><link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700;800&display=swap" rel="stylesheet">
+    <style>
+        *{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+.contenedor{
+    padding: 60px 0;
+    width: 90%;
+    max-width: 1000px;
+    margin: auto;
+    overflow: hidden;
+}
+.titulo{
+    color:#FF3342;
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 60px;
+
+}
+/* Header*/
+header{
+    width: 100%;
+    height: 600px;
+    background: #333333;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, hsla(0, 93%, 56%, 0.658), hsla(0, 69%, 47%, 0.178)), url(../CSS/img/portada\ 3.jpg);
+    background: linear-gradient(to right, hsla(0, 93%, 56%, 0.658), hsla(0, 69%, 47%, 0.178)), url(../CSS/img/portada\ 3.jpg);
+     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+    margin-right: 10px;
+
+}
+nav{
+    text-align: right;
+    padding: 30px 50px 0 0;
+}
+nav > a{
+    color:white;
+    font-weight: 300;
+    text-decoration: none;
+    margin-right: 10px;
+}
+nav > a:hover{
+   text-decoration: underline;
+}
+
+header .textos-header{
+    display: flex;
+    height: 420px;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+.textos-header h1{
+    font-size: 50px;
+    color: white;
+}
+.textos-header h2 {
+    font-size: 30px;
+    font-weight: 200%;
+    color: white;
+}
+.wave{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+
+.contenedor-sobre-nosotros{
+    display:flex;
+    justify-content: space-around;
+
+
+}
+.imagen-about-us{
+    width: 48%;
+}
+.sobre-nosotros .contenido-textos{
+    width: 48%;
+}
+.contenido-textos h3{
+    margin-bottom: 15px;
+}
+.contenido-textos h3 span{
+    background:#FF3342;
+    color:white;
+    border-radius: 50%;
+    text-align: center;
+    width: 200px;
+    height: 100px;
+    padding: 2px;
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, .5);
+    margin-right: 5px;
+
+}
+.contenido-textos p{
+    padding: 0px 0px 30px 15px;
+    font-weight: 300;
+    text-align: justify;
+}
+.Populares{
+    background:#FFF3F3; 
+}
+.galeria-popu{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+.imagen-popu{
+    width: 24%;
+    margin-bottom: 10px;
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, .5);
+}
+.imagen-popu > img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+.hover-galeria{
+    position:absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    transform: scale(0); 
+    background: hsla(356, 100%, 60%, 0.418);
+    transition: transform .5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.imagen-popu:hover .hover-galeria{
+    transform: scale(1);
+}
+.cards{
+    display: flex;
+    justify-content: space-evenly;
+}
+.cards .card{
+    background:#EE7E7E ;
+    display:flex;
+    width: 85%;
+    height: 250px;
+    align-items: center;
+    justify-content: space-evenly;
+    border-radius: 5px;
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, .5);
+}
+.cards .card img{
+    width: 200px;
+    height: 200px;
+   
+}
+.cards .card > .contenido-texto-card p{
+    font-weight: 300;
+    padding-top: 5px;
+}
+.diferentes-cont{
+    background: #FFF3F3;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+
+}
+.servicio-cont{
+    display: flex;
+    justify-content: space-between;
+}
+.servicio-ind{
+    width: 100%;
+    text-align: center;
+}
+.servicio-ind img{
+    width: 80%;
+
+    
+}
+.servicio-ind h3{
+    margin: 10px 0;
+}
+
+    </style>
+    
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="inicio">Inicio</a>
+            <a href="nosotros">Nosotros</a>
+            <a href="populares">Populares</a>
+            <a href="descubrimientos">Descubrimientos</a>
+            <a href="generos">Nuevos generos</a>
+        </nav>
+        <section class="textos-header">
+            <h1 id="inicio">Recomendaciones de las mejores peliculas y series en NETFLIX</h1>
+            <h2>¡No te lo pierdas!</h2>
+        </section>
+        <div class="wave" style="height: 150px; overflow: hidden;" ><svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M-11.00,37.98 C149.99,150.00 351.30,-84.38 500.00,49.98 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: white;"></path></svg></div>
+    </header>
+    <section class="contenedor sobre-nosotros">
+        <h2 class="titulo" id="nosotros">Nuestra Pagina</h2>
+        <div class="contenedor-sobre-nosotros">
+             <img src="img/undraw_netflix_q00o.svg" alt="ilustracion de netflix" width="600" class="imagen-about-us">
+             <div class="contenido-textos">
+                 <h3><span>1</span>Nuestro Proposito</h3>
+                 <p>Brindarle a cada usuario de CAFLIX la mejor experiencia viendo su plataforma
+                      favorita de streaming Netflix. Queremos mostrarte muchas opciones de 
+                      películasy series, de diferentes géneros, idiomas, paises, para que no 
+                      te aburras  ¡nunca mas!
+                      </p>
+                <h3><span>2</span>Meta</h3>
+                 <p>el descubrimiento de nuevas peliculas y series 
+                    para entretenerlos, sin embrago no 
+                    dejamos de lado a los nuevos usuarios que quizás no han visto 
+                    las series mas populares que nunca pasan de moda. </p>
+             </div>
+        </div>
+    </section>
+      <section class="Populares">
+       <div class="contenedor">
+          <h2 class="titulo" id="populares">Populares</h2>
+          <div class="galeria-popu">
+              <div class="imagen-popu">
+                  <img src="img/vikingos.jpg" alt="">
+                    <div class="hover-galeria">
+                       <img src="img/selector 2.png" alt="">
+                         <p>Vikingos</p>
+
+                  </div>
+             </div>
+             <div class="imagen-popu">
+                <img src="img/umbrella academy.jpg" alt="">
+                  <div class="hover-galeria">
+                     <img src="img/selector 2.png" alt="">
+                       <p>Umbrella Academy</p>
+
+                </div>
+           </div> <div class="imagen-popu">
+            <img src="img/enola homes.jpg" alt="">
+              <div class="hover-galeria">
+                 <img src="img/selector 2.png" alt="">
+                   <p>Enola Homes</p>
+
+            </div>
+       </div> <div class="imagen-popu">
+        <img src="img/lupin.jpg" alt="">
+          <div class="hover-galeria">
+             <img src="img/selector 2.png" alt="">
+               <p>Lupin</p>
+
+        </div>
+   </div> <div class="imagen-popu">
+    <img src="img/bridgerton" alt="">
+      <div class="hover-galeria">
+         <img src="img/selector 2.png" alt="">
+           <p>bridgerton</p>
+
+    </div>
+</div> <div class="imagen-popu">
+    <img src="img/gambito de dama.jpg" alt="">
+      <div class="hover-galeria">
+         <img src="img/selector 2.png" alt="">
+           <p>Gambito De Dama</p>
+
+    </div>
+</div> <div class="imagen-popu">
+    <img src="img/bird box.jpg" alt="">
+      <div class="hover-galeria">
+         <img src="img/selector 2.png" alt="">
+           <p>Bird Box</p>
+
+    </div>
+</div> <div class="imagen-popu">
+    <img src="img/la casa de papel" alt="">
+      <div class="hover-galeria">
+         <img src="img/selector 2.png" alt="">
+           <p>La Casa De Papel</p>
+
+               </div>
+          </div>
+        </div>
+     </div>
+  </section>
+  <section class="descubrimientos contenedor">
+      <h2 class="titulo" id="descubrimientos">Nuevos Descubrimientos</h2>
+      <div class="cards">
+          <div class="card">
+              <img src="img/computador 2.jpg" alt="">
+              <div class="contenido-texto-card">
+                  <p>  ademas de las mas populares tambien te mostraremos todas aquellas que pasaron por desapercivido
+                      como: violet & finch, the last dance, aterrizaje de emergencia a tu corazon, itawon class, vincenzo,
+                      start up, The call, men on a mission.
+                  </p>
+              </div>
+              
+          </div>
+         <div class="card">
+              <img src="img/pexels-ellie-burgin-4057890 (1).jpg" alt="">
+              <div class="contenido-texto-card">
+                  <p> muchos usuarios no exploran todo el contenido de netflix porque no son muy arriesgados
+                      o quizas no saben que estas increibles peliculas y series existen, por eso te diremos
+                      nuevos generos para que descubras mas contenido.
+                  </p>
+              </div>
+              
+          </div>
+      </div>
+
+  </section>
+  <section class="diferent movie">
+      <div class="contenedor">
+          <h2 class="titulo" id="generos">generos diferentes</h2>
+          <div class="diferentes-cont">
+              <div class="servicio-ind">
+                  <img src="img/dormas asiaticos.jpg" alt="">
+                  <h3>series Asiaticas</h3>
+                  <p>este genero esta lleno de accion, de misterio, pero, sin lugar a duda
+                      los dramas son los mejores, con una produccion de otro nivel los mas famosos
+                      son: love alarm, it`s okay not to be okat, the king, extracurricular. </p>
+                      <a href="https://www.adslzone.net/reportajes/series/mejores-series-coreanas/">conocer mas series asiaticas en netflix</a>
+              </div>
+              <div class="servicio-ind">
+                <img src="img/anime netflix.jpg" alt="">
+                <h3>Anime</h3>
+                <p>los animes de netflix cuenta con una gran popularidad por sus diferentes generos 
+                    los mas conocidos son: kakegurui, the promise neverland y beastart </p>
+                    <a href="https://www.vidaextra.com/listas/las-17-mejores-series-de-anime-que-puedes-ver-en-netflix">conocer mas de anime en netflix</a>
+            </div>
+            <div class="servicio-ind">
+                <img src="img/cocina netflix.jpg" alt="">
+                <h3>Gatronomia y Reposteria</h3>
+                <p>este genero es para los amantes de la comida es dicir todos. cuenta con series desde
+                    competencias muy profesionales y dificiles, hasta aquellas que te hacen reir de lo 
+                   mal que cocinan los mas famosos son: Nailed it, los platos sobre la mesa, sugar rush,
+                zumbo do dessert y muchos mas. </p>
+                <a href="https://www.adslzone.net/reportajes/series/mejores-series-comida-gastronomia/">conocer mas gastronomia y reposteria en netflix</a>
+            </div>
+          </div>
+      </div>
+
+  </section>
+</main>
+        
+</body>
+</html>
